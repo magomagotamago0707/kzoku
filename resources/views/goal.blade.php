@@ -27,14 +27,14 @@
                                 <div class="col-md-6">
                                     <input id="" type="text" class="form-controlr"  name="title" value="{{isset($goal->title) ? $goal->title : ''}}">
                                 </div>
-                                <label class="col-md-4 col-form-label text-md-right">{{ __('開始日時') }}</label>
+                                {{-- <label class="col-md-4 col-form-label text-md-right">{{ __('開始日時') }}</label>
                                 <div class="col-md-6">
                                     <input id="" type="date" class="form-controlr" name="start_date" value={{isset($goal->start_date) ? $goal->start_date : ''}} >
-                                </div>
-                                <label class="col-md-4 col-form-label text-md-right">{{ __('終了日時') }}</label>
+                                </div> --}}
+                                {{-- <label class="col-md-4 col-form-label text-md-right">{{ __('終了日時') }}</label>
                                 <div class="col-md-6">
                                     <input id="" type="date" class="form-controlr" name="end_date" value={{isset($goal->end_date) ? $goal->end_date : ''}} >
-                                </div>
+                                </div> --}}
                                 <input type="hidden" name="goal_information_id" value={{isset($goal->goal_information_id) ? $goal->goal_information_id : ''}}>
                                 <button type="submit">登録する</button><br>
                                 <a href= "/home" >戻る</a><br>
