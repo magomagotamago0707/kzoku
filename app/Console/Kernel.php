@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
+        Commands\ResetCountFlg::class
     ];
 
     /**
@@ -24,7 +25,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        // $schedule->command('resetcountflg')->hourly();
+        $schedule->command('resetcountflg')->everyMinute();
+        // クロージャでタスクの登録(直接ここに処理も記述)
+        // $schedule->call(function () {
+        //     \Log::info('毎分ログ出力テスト - closure');
+        // })->everyMinute();
     }
 
     /**
