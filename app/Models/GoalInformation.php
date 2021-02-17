@@ -112,4 +112,16 @@ class GoalInformation extends Model
         }
         return $result;
     }
+
+    /**
+     * 目標を更新する
+     */
+    public static function update_count_flg() {
+        $result = \DB::table('goal_information')
+            ->where([['count_flg', 1],['end_date', null],['progress_status',1]])
+            ->update([
+                'count_flg' => 0,
+        ]);
+        return $result;
+    }
 }

@@ -13,7 +13,9 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <p>現在の目標</p><br>
+                        <div class="demo demo5">
+                            <div class="heading"><span>現在の目標</span></div>
+                        </div>
                         @if(isset( $error ))
                             <p style="color:red">{{ $error }}</p>
                         @endif
