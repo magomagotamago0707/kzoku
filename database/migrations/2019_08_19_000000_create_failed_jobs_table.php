@@ -13,6 +13,10 @@ class CreateFailedJobsTable extends Migration
      */
     public function up()
     {
+        if (Schema::hasTable('failed_jobs')) {
+            // テーブルが存在していればリターン
+            return;
+        }
         Schema::create('failed_jobs', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();

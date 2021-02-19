@@ -13,6 +13,10 @@ class ChangeGoalInformationTableColumnStartDate extends Migration
      */
     public function up()
     {
+        if (Schema::hasTable('goal_information')) {
+            // テーブルが存在していればリターン
+            return;
+        }
         Schema::table('goal_information', function (Blueprint $table) {
             //
             $table->date('start_date')->nullable()->change();

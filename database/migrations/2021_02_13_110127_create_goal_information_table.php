@@ -13,6 +13,10 @@ class CreateGoalInformationTable extends Migration
      */
     public function up()
     {
+        if (Schema::hasTable('goal_information')) {
+            // テーブルが存在していればリターン
+            return;
+        }
         Schema::create('goal_information', function (Blueprint $table) {
             $table->increments('igoal_information_id');
             $table->string('personal_id')->nullable(false);
