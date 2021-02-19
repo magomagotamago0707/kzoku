@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 class CreateGoalInformationTable extends Migration
 {
@@ -19,7 +18,7 @@ class CreateGoalInformationTable extends Migration
             return;
         }
         Schema::create('goal_information', function (Blueprint $table) {
-            $table->increments('goal_information_id');
+            $table->increments('igoal_information_id');
             $table->string('personal_id')->nullable(false);
             $table->string('title')->nullable(false);
             $table->timestamp('start_date')->nullable(false);
@@ -28,8 +27,8 @@ class CreateGoalInformationTable extends Migration
             $table->integer('progress_status')->nullable(false);
             $table->integer('setting_status')->nullable(false);
             $table->integer('count_flg')->nullable(false);
-            $table->timestamp('updated_at')->useCurrent()->nullable();
-            $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
