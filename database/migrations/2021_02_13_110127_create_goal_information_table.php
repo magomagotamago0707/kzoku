@@ -28,7 +28,7 @@ class CreateGoalInformationTable extends Migration
             $table->integer('progress_status')->nullable(false);
             $table->integer('setting_status')->nullable(false);
             $table->integer('count_flg')->nullable(false);
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
