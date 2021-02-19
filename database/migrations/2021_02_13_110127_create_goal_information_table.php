@@ -18,7 +18,7 @@ class CreateGoalInformationTable extends Migration
             return;
         }
         Schema::create('goal_information', function (Blueprint $table) {
-            $table->increments('igoal_information_id');
+            $table->increments('goal_information_id');
             $table->string('personal_id')->nullable(false);
             $table->string('title')->nullable(false);
             $table->timestamp('start_date')->nullable(false);

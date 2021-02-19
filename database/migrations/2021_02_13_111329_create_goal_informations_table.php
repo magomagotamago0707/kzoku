@@ -13,14 +13,14 @@ class CreateGoalInformationsTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('goal_informations')) {
-            // テーブルが存在していればリターン
-            return;
-        }
-        Schema::create('goal_informations', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        // if (!Schema::hasTable('goal_informations')) {
+        //     // テーブルが存在していればリターン
+        //     return;
+        // }
+        // Schema::create('goal_informations', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->timestamps();
+        // });
     }
 
     /**

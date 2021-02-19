@@ -13,14 +13,14 @@ class ChangeGoalInformationTableColumn extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('goal_information')) {
-            // テーブルが存在していればリターン
-            return;
-        }
-        Schema::table('goal_information', function (Blueprint $table) {
-            //
-            $table->renameColumn('igoal_information_id', 'goal_information_id');
-        });
+        // if (Schema::hasTable('goal_information')) {
+        //     // テーブルが存在していればリターン
+        //     return;
+        // }
+        // Schema::table('goal_information', function (Blueprint $table) {
+        //     //
+        //     $table->renameColumn('igoal_information_id', 'goal_information_id');
+        // });
     }
 
     /**
