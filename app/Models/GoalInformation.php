@@ -59,6 +59,7 @@ class GoalInformation extends Model
             ->where([
                 ['personal_id', $personal_id],
             ])
+            ->whereIn('progress_status', [0,1])
             ->orderByRaw('created_at DESC')
             ->get()->first();
         return $result;
@@ -74,6 +75,7 @@ class GoalInformation extends Model
             ])
             ->orderByRaw('goal_information_id DESC')
             ->get();
+
         return $result;
     }
 
@@ -122,6 +124,43 @@ class GoalInformation extends Model
             ->update([
                 'count_flg' => 0,
         ]);
+        return $result;
+    }
+
+    /**
+     * 未達成の目標を終了させる
+     */
+    public static function update_not_achieved_goal_information() {
+        $sql= 'UPDATE
+                    goal_information
+                SET
+                    progress_status = 2,
+                    end_date = now()
+                WHERE
+                    count_flg = 0
+                    AND end_date is null
+                    AND progress_status in (0, 1)
+                ';
+       
+       $result = \DB::update($sql);
+        return $result;
+    }
+
+    /**
+     * 開始日なし、終了日ありの場合に開始日=終了日にする
+     */
+    public static function update_maintenance_goal_information() {
+        $sql= 'UPDATE
+                    goal_information
+                SET
+                    start_date = end_date
+                WHERE
+                    count_flg = 0
+                    AND start_date is null
+                    AND progress_status in (2)
+                ';
+       
+       $result = \DB::update($sql);
         return $result;
     }
 }

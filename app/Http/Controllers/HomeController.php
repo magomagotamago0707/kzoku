@@ -28,10 +28,12 @@ class HomeController extends Controller
         $personal_id = Auth::id();
         $latest_goal = GoalInformation::get_latest_goal($personal_id);
         $all_goal = null;
+        $goal_unformation_id = 0;
         if(!empty($latest_goal)){
-            $all_goal = GoalInformation::get_all_goal($personal_id,$latest_goal->goal_information_id);
+            $goal_unformation_id = $latest_goal->goal_information_id;
         }
         
+        $all_goal = GoalInformation::get_all_goal($personal_id,$goal_unformation_id);
         return view('home')->with("goal_info", $latest_goal)->with("all_goal_info", $all_goal);
     }
 }

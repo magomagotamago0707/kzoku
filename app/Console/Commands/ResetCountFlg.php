@@ -38,8 +38,9 @@ class ResetCountFlg extends Command
      */
     public function handle()
     {
+        GoalInformation::update_not_achieved_goal_information();
         GoalInformation::update_count_flg();
-        // \Log::info('ログ出力テスト - command');
+        GoalInformation::update_maintenance_goal_information();
         return 0;
     }
 }

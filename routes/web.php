@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/goal', [App\Http\Controllers\GoalController::class, 'index'])->name('goal');
-Route::get('/goal/edit', [App\Http\Controllers\GoalController::class, 'edit'])->name('goal');
+// Route::get('/goal/edit', [App\Http\Controllers\GoalController::class, 'edit'])->name('goal');
 Route::get('/goal/regist', [App\Http\Controllers\GoalController::class, 'regist'])->name('goal');
 Route::get('/goal/update', [App\Http\Controllers\GoalController::class, 'update'])->name('goal');
 Route::get('/goal/insert', [App\Http\Controllers\GoalController::class, 'insert'])->name('goal');

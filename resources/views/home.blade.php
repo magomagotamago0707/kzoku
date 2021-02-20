@@ -27,11 +27,11 @@
                                 <tr>
                                     <th class="arrow_box">開始日時</th>
                                     <td>{{ $goal_info->start_date }}</td>
-                                </tr>
+                                {{-- </tr>
                                     <tr>
                                     <th>終了日時</th>
                                     <td>{{ $goal_info->end_date }}</td>
-                                </tr>
+                                </tr> --}}
                                 </tr>
                                     <tr>
                                     <th>継続日数</th>
@@ -53,7 +53,7 @@
                                 </div>
                             @endif
                             
-                            <a href= "/goal/edit?goal_id={{ $goal_info->goal_information_id }}" class="btn-square">目標を編集する</a><br>
+                            {{-- <a href= "/goal/edit?goal_id={{ $goal_info->goal_information_id }}" class="btn-square">目標を編集する</a><br> --}}
                         @else
                             <div class="box10">
                                 <p style="color:red">目標が設定されていません。</p>
@@ -61,7 +61,7 @@
                         @endif
                         <a href= "/goal/regist" class="btn-square">目標を新規登録する</a><br>
                     </div>
-                    @if (isset($goal_info))
+                    @if (isset($all_goal_info))
                         <div>
                             <br>
                             <div class="demo demo5">
